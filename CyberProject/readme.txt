@@ -64,9 +64,6 @@ This project is a demonstration of various vulnerabilities for educational purpo
 ## 𝗘𝗱𝘂𝗰𝗮𝘁𝗶𝗼𝗻𝗮𝗹 𝗚𝗼𝗮𝗹𝘀
 This project is intended for ethical use in learning about vulnerabilities and secure coding practices. It should not be used for malicious purposes. Always follow ethical guidelines when working with security concepts.
 
-## 𝗟𝗶𝗰𝗲𝗻𝘀𝗲
-||||||||||||||||This project is released under the MIT License. See LICENSE for details.|||||||||||||||||||
-
 ## 𝗖𝗼𝗻𝘁𝗮𝗰𝘁
 For further queries, feel free to reach out:
 - Name: Cyber Saviours
