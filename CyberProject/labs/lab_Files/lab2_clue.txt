@@ -1,0 +1,4 @@
+Clue for Lab 2: Encoding Tricks
+
+Not everything is what it seems. What you see might be hiding something else.
+A common transformation could help reveal the secret.

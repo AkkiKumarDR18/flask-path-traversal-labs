@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ lab.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<canvas id="matrixCanvas"></canvas>
+
+<div class="container">
+    <h1 class="panel-title"><b><i>{{ lab.name }}</i></b></h1>
+
+    <p><b>Objective:</b> Exploit path traversal to retrieve the expected file.</p>
+
+    <!-- Main form for solution input -->
+    <form method="post">
+        <input type="text" name="solution" placeholder="ENTER FILE PATH">
+        <button type="submit"><b>SUBMIT</b></button>
+    </form>
+
+    <!-- Display feedback -->
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+
+    <!-- Display file content -->
+    {% if file_content %}
+        <div class="file-content">
+            <pre>{{ file_content }}</pre>
+        </div>
+    {% endif %}
+
+    <!-- Show Done button if applicable -->
+    {% if show_done_button %}
+        <form method="post">
+            <button name="done" value="true" type="submit" class="done-btn"><b>DONE</b></button>
+        </form>
+    {% endif %}
+
+    <!-- File upload form for specific labs -->
+    {% if lab.id == 3 or lab.id == 4 or lab.id == 5 %}
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <button type="submit">Upload File</button>
+        </form>
+    {% endif %}
+
+    <!-- Back to labs link -->
+    <a href="{{ url_for('index') }}" class="back-btn"><b>🔙 BACK TO LABS</b></a>
+</div>
+
+<script src="{{ url_for('static', filename='matrix.js') }}"></script>
+</body>
+</html>

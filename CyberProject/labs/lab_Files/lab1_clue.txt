@@ -1,0 +1,4 @@
+Clue for Lab 1: Simple Path Traversal
+
+Sometimes the simplest path isn't the one you see first. Look around.
+A small step up could reveal more than you expect.

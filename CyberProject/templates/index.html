@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Traversal Labs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Matrix Background -->
+<canvas id="matrixCanvas"></canvas>
+
+<div class="container">
+    <h1 class="panel-title"><b><i>💻 PATH TRAVERSAL VULNERABILITY LABS 💻</i></b></h1>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+        <strong>Score:</strong> <span id="score">{{ score }}</span> points
+    </div>
+
+    <!-- Lab Cards Wrapper (For Stacking) -->
+    <div class="labs-wrapper">
+        <div class="labs-container">
+            {% for lab in labs %}
+            <div class="lab-card {% if not lab.unlocked %}locked{% endif %}">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2>{{ lab.name }}</h2>
+                        <p>🔒 Locked</p> 
+                        <p>Points: {{ lab.points }}</p>
+                    </div>
+                    <div class="card-back">
+                        {% if lab.unlocked %}
+                        <p>🔓 Unlocked</p>
+                        <a href="{{ url_for('complete_lab', lab_id=lab.id) }}">
+                            <p><b>CLICK TO ENTER</b></p>
+                        </a>
+                        {% else %}
+                        <p>🔒 Locked</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Scroll Buttons -->
+    <div class="scroll-controls">
+        <button onclick="prevLab()">⬅️ PREVIOUS</button>
+        <button onclick="nextLab()">NEXT ➡️</button>
+    </div>
+
+    <!-- Restart Button -->
+    <a href="{{ url_for('restart') }}" class="restart-btn">RESTART</a>
+</div>
+
+<script src="{{ url_for('static', filename='matrix.js') }}"></script>
+<script src="{{ url_for('static', filename='scrolleffect.js') }}"></script>
+</body>
+</html>

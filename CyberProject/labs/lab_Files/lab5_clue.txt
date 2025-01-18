@@ -1,0 +1,4 @@
+Clue for Lab 5: File Upload Deletes an Existing File
+
+A file’s name holds more weight than you might realize. Its contents can shape the outcome.
+Pay attention to details when replacing files.

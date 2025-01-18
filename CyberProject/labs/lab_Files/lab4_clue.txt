@@ -1,0 +1,4 @@
+Clue for Lab 4: Directory Bypass
+
+Sometimes things hide in plain sight. Unseen paths may be closer than you think.
+Zip it up and extract carefully.

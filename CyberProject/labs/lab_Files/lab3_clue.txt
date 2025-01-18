@@ -1,0 +1,4 @@
+Clue for Lab 3: File Upload
+
+The file you upload could be more than just a name.
+Make sure it's exactly what the system expects.

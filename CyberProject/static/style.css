@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: black;
+    color: #00ff00;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Ensure Matrix Animation is in the Background */
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keeps the matrix in the background */
+}
+
+/* Panel-style Container */
+.container {
+    background: rgba(0, 0, 0, 0.9); /* Dark background */
+    border: 2px solid #00ff00; /* Neon green border */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); /* Glowing effect */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 650px;
+    height: 520px;
+}
+
+.container input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid #00ff00;
+    background: black;
+    color: #00ff00;
+}
+
+/* Panel Title */
+.panel-title {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00;
+    margin-bottom: 15px;
+}
+
+/* Scoreboard */
+.scoreboard {
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #00ff00;
+    width: 200px;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+/* Stacked Cards */
+.labs-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    margin: auto;
+    overflow: hidden;
+    perspective: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Flip container */
+.lab-card {
+    position: absolute;
+    width: 80%;
+    height: 120px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    text-align: center;
+    text-shadow: 0 0 5px #00ff00;
+    padding: 20px;
+    transition: transform 0.5s, scale 0.3s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Apply stacking effect */
+.lab-card:nth-child(1) { transform: translateY(0) scale(1); z-index: 5; }
+.lab-card:nth-child(2) { transform: translateY(20px) scale(0.96); z-index: 4; }
+.lab-card:nth-child(3) { transform: translateY(40px) scale(0.92); z-index: 3; }
+.lab-card:nth-child(4) { transform: translateY(60px) scale(0.88); z-index: 2; }
+.lab-card:nth-child(5) { transform: translateY(80px) scale(0.84); z-index: 1; }
+
+/* Animation when scrolling */
+.labs-container .lab-card.active {
+    transform: translateY(-5px) scale(1.1);
+    z-index: 6;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+.lab-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ff00;
+    text-align: center;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.locked {
+    opacity: 0.4;
+    pointer-events: none;
+    border: 2px solid gray;
+}
+
+/* Flip animation */
+.lab-card.flipped {
+    transform: translate(-50%, -50%) rotateY(180deg) scale(1.1);
+}
+
+/* Front & Back Styling */
+.lab-card .front,
+.lab-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Back side of the card */
+.lab-card .back {
+    transform: rotateY(180deg);
+    background: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+button {
+    padding: 10px;
+    background: #00ff00;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back-btn {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: red;
+}
+
+.done-btn {
+    padding: 10px 20px;
+    background-color: #00ff00;
+    color: black;
+    font-weight: bold;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.done-btn:hover {
+    background-color: #007700;
+    color: white;
+}
+
+/* Restart Button */
+.restart-btn {
+    border: 2px solid #00ff00;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background: rgb(209, 97, 97);
+    color: white;
+    text-align: center;
+    width: 200px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.restart-btn:hover {
+    background: rgb(145, 25, 25);
+}
