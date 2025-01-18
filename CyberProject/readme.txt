@@ -70,6 +70,9 @@ This project is intended for ethical use in learning about vulnerabilities and s
 ## 𝗖𝗼𝗻𝘁𝗮𝗰𝘁
 For further queries, feel free to reach out:
 - Name: Cyber Saviours
-- Group Members: AKSHAY KUMAR D R, CHARAN, DEEKSHA
+- Group Members: 
+	AKSHAY KUMAR D R
+	CHARAN G
+	DEEKSHA Y V
 - Location: Bangalore
 
