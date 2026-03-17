@@ -54,6 +54,9 @@ This project is a demonstration of various vulnerabilities for educational purpo
 3. 𝐔𝐧𝐬𝐚𝐟𝐞 𝐅𝐢𝐥𝐞 𝐔𝐩𝐥𝐨𝐚𝐝𝐬:
 - Labs 3 and 5 demonstrate the dangers of allowing unvalidated file uploads.
 
+## Preview
+
+
 ## 𝗠𝗶𝘁𝗶𝗴𝗮𝘁𝗶𝗼𝗻𝘀 𝗜𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁𝗲𝗱
 * 𝐋𝐚𝐛 𝟏: File path validation to prevent path traversal attacks.
 * 𝐋𝐚𝐛 𝟐: Base64 decoding with validation and dangerous content detection.
