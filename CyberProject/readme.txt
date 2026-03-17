@@ -20,10 +20,10 @@ This project is a demonstration of various vulnerabilities for educational purpo
    - Focuses on unsafe file operations when handling user uploads.
 
 ## 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗺𝗲𝗻𝘁𝘀
-- Python 3.8 or later
-- Flask 2.0.0 or later
-- Werkzeug (for secure file handling)
-- Base64 and Zipfile modules (default in Python)
+* Python 3.8 or later
+* Flask 2.0.0 or later
+* Werkzeug (for secure file handling)
+* Base64 and Zipfile modules (default in Python)
 
 ## 𝗦𝗲𝘁𝘂𝗽 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻𝘀
 1. Clone or download the project to your local machine.
@@ -37,12 +37,12 @@ This project is a demonstration of various vulnerabilities for educational purpo
 	http://127.0.0.1:5000
 
 ## 𝗙𝗶𝗹𝗲 𝗦𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲
-- `app.py`: The main Flask application file.
-- `labs/`: Directory containing lab-specific files and upload folders.
-- `lab_Files/`: Stores files for the labs.
-- `lab_files/`: Temporary folder for user uploads.
-- `templates/`: Contains HTML templates for rendering the web pages.
-- `static/`: Optional directory for CSS, JS, or other static assets.
+* `app.py`: The main Flask application file.
+* `labs/`: Directory containing lab-specific files and upload folders.
+* `lab_Files/`: Stores files for the labs.
+* `lab_files/`: Temporary folder for user uploads.
+* `templates/`: Contains HTML templates for rendering the web pages.
+* `static/`: Optional directory for CSS, JS, or other static assets.
 
 ## 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗩𝘂𝗹𝗻𝗲𝗿𝗮𝗯𝗶𝗹𝗶𝘁𝗶𝗲𝘀 𝗗𝗲𝗺𝗼𝗻𝘀𝘁𝗿𝗮𝘁𝗲𝗱
 1. 𝐏𝐚𝐭𝐡 𝐓𝐫𝐚𝐯𝐞𝐫𝐬𝐚𝐥:
@@ -55,21 +55,21 @@ This project is a demonstration of various vulnerabilities for educational purpo
 - Labs 3 and 5 demonstrate the dangers of allowing unvalidated file uploads.
 
 ## 𝗠𝗶𝘁𝗶𝗴𝗮𝘁𝗶𝗼𝗻𝘀 𝗜𝗺𝗽𝗹𝗲𝗺𝗲𝗻𝘁𝗲𝗱
-- 𝐋𝐚𝐛 𝟏: File path validation to prevent path traversal attacks.
-- 𝐋𝐚𝐛 𝟐: Base64 decoding with validation and dangerous content detection.
-- 𝐋𝐚𝐛 𝟑: Restricts uploaded files to specific names and ensures safe handling.
-- 𝐋𝐚𝐛 𝟒: Checks extracted zip file paths to prevent directory traversal.
-- 𝐋𝐚𝐛 𝟓: Deletes only files explicitly listed within the uploaded file to ensure controlled deletion.
+* 𝐋𝐚𝐛 𝟏: File path validation to prevent path traversal attacks.
+* 𝐋𝐚𝐛 𝟐: Base64 decoding with validation and dangerous content detection.
+* 𝐋𝐚𝐛 𝟑: Restricts uploaded files to specific names and ensures safe handling.
+* 𝐋𝐚𝐛 𝟒: Checks extracted zip file paths to prevent directory traversal.
+* 𝐋𝐚𝐛 𝟓: Deletes only files explicitly listed within the uploaded file to ensure controlled deletion.
 
 ## 𝗘𝗱𝘂𝗰𝗮𝘁𝗶𝗼𝗻𝗮𝗹 𝗚𝗼𝗮𝗹𝘀
 This project is intended for ethical use in learning about vulnerabilities and secure coding practices. It should not be used for malicious purposes. Always follow ethical guidelines when working with security concepts.
 
 ## 𝗖𝗼𝗻𝘁𝗮𝗰𝘁
 For further queries, feel free to reach out:
-- Name: Cyber Saviours
-- Group Members: 
+* Name: Cyber Saviours
+* Group Members: 
 	AKSHAY KUMAR D R
 	CHARAN G
 	DEEKSHA Y V
-- Location: Bangalore
+* Location: Bangalore
 
