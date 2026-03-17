@@ -1,48 +1,57 @@
-# 𝗙𝗹𝗮𝘀𝗸 𝗣𝗮𝘁𝗵 𝗧𝗿𝗮𝘃𝗲𝗿𝘀𝗮𝗹 𝗩𝘂𝗹𝗻𝗲𝗿𝗮𝗯𝗹𝗲 𝗔𝗽𝗽𝗹𝗶𝗰𝗮𝘁𝗶𝗼𝗻
+# 🛡️ Flask Path Traversal & Security Lab
+### *An Educational Sandbox for Web Vulnerability Research*
 
-## 𝗢𝘃𝗲𝗿𝘃𝗶𝗲𝘄
-This project is a demonstration of various vulnerabilities for educational purposes. It consists of five labs, each showcasing a different security issue related to path traversal, file handling, and unsafe file uploads. These labs are designed to help users learn about security flaws and understand how to mitigate them.
+## 🌟 Overview
+This project is a specialized security laboratory built with **Flask**. It is designed to demonstrate common web vulnerabilities, specifically focusing on **Path Traversal**, **Unsafe File Handling**, and **Malicious File Uploads**. 
 
-## 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀
-1. 𝐋𝐚𝐛 𝟏: 𝐒𝐢𝐦𝐩𝐥𝐞 𝐏𝐚𝐭𝐡 𝐓𝐫𝐚𝐯𝐞𝐫𝐬𝐚𝐥
-   - Explores the risk of allowing unchecked file path inputs.
+Each lab provides a hands-on environment to understand how attackers exploit weak code and, more importantly, how developers can implement robust mitigations using secure coding practices.
 
-2. 𝐋𝐚𝐛 𝟐: 𝐄𝐧𝐜𝐨𝐝𝐢𝐧𝐠 𝐓𝐫𝐢𝐜𝐤𝐬
-   - Demonstrates how Base64 encoding can be exploited to bypass security mechanisms.
+## 🧪 Detailed Lab Modules
+The application is divided into five progressive security challenges:
 
-3. 𝐋𝐚𝐛 𝟑: 𝐅𝐢𝐥𝐞 𝐔𝐩𝐥𝐨𝐚𝐝
-   - Highlights the dangers of improper handling of uploaded files.
+1.  **Lab 1: Simple Path Traversal** * **Vulnerability:** Unchecked file path inputs via URL parameters.
+    * **Impact:** Unauthorized access to sensitive system files (e.g., `/etc/passwd`).
 
-4. 𝐋𝐚𝐛 𝟒: 𝐃𝐢𝐫𝐞𝐜𝐭𝐨𝐫𝐲 𝐁𝐲𝐩𝐚𝐬𝐬
-   - Shows how zip file extraction can be exploited for path traversal attacks.
+2.  **Lab 2: Encoding Tricks (Base64 Bypass)** * **Vulnerability:** Trusting encoded inputs.
+    * **Attack Vector:** Using Base64 to hide malicious traversal strings from simple security filters.
 
-5. 𝐋𝐚𝐛 𝟓: 𝐀𝐝𝐯𝐚𝐧𝐜𝐞𝐝 𝐏𝐚𝐭𝐡 𝐌𝐚𝐧𝐢𝐩𝐮𝐥𝐚𝐭𝐢𝐨𝐧
-   - Focuses on unsafe file operations when handling user uploads.
+3.  **Lab 4: Zip Slip (Directory Bypass)** * **Vulnerability:** Unsafe extraction of compressed archives.
+    * **Attack Vector:** Exploiting `zipfile` extraction to overwrite files outside the intended directory.
 
-## 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗺𝗲𝗻𝘁𝘀
-* Python 3.8 or later
-* Flask 2.0.0 or later
-* Werkzeug (for secure file handling)
-* Base64 and Zipfile modules (default in Python)
+4.  **Lab 3 & 5: Unsafe File Operations** * **Vulnerability:** Improper handling of user-uploaded files and metadata.
+    * **Mitigation:** Implementation of `werkzeug.utils.secure_filename` and strict directory sandboxing.
 
-## 𝗦𝗲𝘁𝘂𝗽 𝗜𝗻𝘀𝘁𝗿𝘂𝗰𝘁𝗶𝗼𝗻𝘀
-1. Clone or download the project to your local machine.
-2. Navigate to the project directory:
-	cd <project-folder>
-3. Install dependencies:
-	pip install -r requirements.txt
-4. Run the Flask application:
-	python app.py
-5. Open your browser and navigate to:
-	http://127.0.0.1:5000
 
-## 𝗙𝗶𝗹𝗲 𝗦𝘁𝗿𝘂𝗰𝘁𝘂𝗿𝗲
-* `app.py`: The main Flask application file.
-* `labs/`: Directory containing lab-specific files and upload folders.
-* `lab_Files/`: Stores files for the labs.
-* `lab_files/`: Temporary folder for user uploads.
-* `templates/`: Contains HTML templates for rendering the web pages.
-* `static/`: Optional directory for CSS, JS, or other static assets.
+
+## 🛠️ Tech Stack & Requirements
+* **Backend:** Python 3.8+ / Flask 2.0.0+
+* **Security Utilities:** Werkzeug (Secure Filename), Base64, Zipfile
+* **Frontend:** Jinja2 Templates, HTML5, CSS3
+
+## ⚙️ Setup & Installation
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/Cyber-Saviours/Flask-Security-Labs.git](https://github.com/Cyber-Saviours/Flask-Security-Labs.git)
+    cd Flask-Security-Labs
+    ```
+2.  **Environment Setup:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Run the Application:**
+    ```bash
+    python app.py
+    ```
+4.  **Access the Labs:** Navigate to `http://127.0.0.1:5000` in your browser.
+
+## 📂 Project Architecture
+```text
+├── app.py              # Main Flask Entry Point
+├── labs/               # Lab logic and vulnerable endpoints
+├── lab_files/          # Controlled environment for file operations
+├── templates/          # Responsive UI components
+├── requirements.txt    # Python dependencies
+└── README.md           # Documentation
 
 ## 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 𝗩𝘂𝗹𝗻𝗲𝗿𝗮𝗯𝗶𝗹𝗶𝘁𝗶𝗲𝘀 𝗗𝗲𝗺𝗼𝗻𝘀𝘁𝗿𝗮𝘁𝗲𝗱
 1. 𝐏𝐚𝐭𝐡 𝐓𝐫𝐚𝐯𝐞𝐫𝐬𝐚𝐥:
